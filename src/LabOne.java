@@ -9,7 +9,7 @@ public class LabOne
 {
     static Scanner readUserInput = new Scanner(System.in);
     static String  userInput;
-
+    static float   userBalance;
     // Main block - Display user options and read user input to determine method calls.
     public static void main(String[] args)
     {
@@ -17,19 +17,26 @@ public class LabOne
         System.out.println("----------------");
         System.out.println();
         System.out.println("TERMINAL OPTIONS:");
-        System.out.println("WITHDRAWAL");
-        System.out.println("DEPOSIT");
-        System.out.println("CHECK BALANCE");
-        System.out.println("EXIT");
+        System.out.println("(1): WITHDRAWAL");
+        System.out.println("(2): DEPOSIT");
+        System.out.println("(3): CHECK BALANCE");
+        System.out.println("(4): EXIT");
         System.out.println();
 
         userInput = readUserInput.nextLine();
 
-        switch (userInput)
-            {
-            case "WITHDRAWAL":
-            }
+        if (userInput.equalsIgnoreCase("1") ||  userInput.equalsIgnoreCase("WITHDRAWAL") ) {
+            System.out.println("Withdrawal");
+        }
+        else System.out.println(getUserBalance());
+        {}
+
     }
 
-    
+    public static float getUserBalance()
+    {
+        return userBalance;
+    }
+
+
 }
