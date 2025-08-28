@@ -22,28 +22,33 @@ public class LabOneMain
         System.out.println("CHECK BALANCE");
         System.out.println("EXIT");
 
-        while (true) {                  // This maintains the loop until system exit
+        while (true)
+        {                  // This maintains the loop until system exit
                                         // This feels bad but works flawlessly so I didn't change it
             System.out.println();
             System.out.printf("\nUser@Terminal:  "); // Feels closer to how things should in a console
             userInput = readUserInput.nextLine();
 
-            if (userInput.equalsIgnoreCase("WITHDRAWAL")) {
+            if (userInput.equalsIgnoreCase("WITHDRAWAL"))
+            {
                 System.out.printf("\nHow much you want to deposit: ");
                 userModifierValue = readUserInput.nextDouble();
                 withdraw(userModifierValue);
                 System.out.println("Operation complete!");
             }
-            else if (userInput.equalsIgnoreCase("DEPOSIT")) {
+            else if (userInput.equalsIgnoreCase("DEPOSIT"))
+            {
             System.out.printf("\nHow much would you like to deposit?: ");
             userModifierValue = readUserInput.nextDouble();
             deposit(userModifierValue);
             System.out.println("Operation complete!");
             }
-            else if (userInput.equalsIgnoreCase("BALANCE") || userInput.contains("balance")) {
+            else if (userInput.equalsIgnoreCase("BALANCE") || userInput.contains("balance"))
+            {
                 System.out.println("Your current account balance is: " + getAccountBalance());
             }
-            else if (userInput.equalsIgnoreCase("exit")) {
+            else if (userInput.equalsIgnoreCase("exit"))
+            {
                 System.out.println("Exiting...");
                 System.exit(0);
             }
@@ -74,8 +79,18 @@ public class LabOneMain
     public static void withdraw(double userModifierValue) // Withdraw user specified amount then set account balance
     {
         double previousAccountBalance = LabOneMain.accountBalance;
-        if (userModifierValue < 0) {}
-            double newAccountBalance = previousAccountBalance - userModifierValue;
+        double newAccountBalance;
+        while (true)
+        {
+            if (0 > userModifierValue)
+            {
+                newAccountBalance = previousAccountBalance - userModifierValue;
+                if (0 > newAccountBalance)
+                {
+
+                }
+            }
+        }
 
         // Set new values
         setAccountBalance(newAccountBalance);
