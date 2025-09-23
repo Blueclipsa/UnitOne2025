@@ -84,13 +84,14 @@ public class House
         return (300000 + (55000 * bedrooms) + (3000 * windows) );
     }
 
-    public boolean isBelowMarketValue(House evaluate)
+    public boolean isBelowMarketValue(House checkHome)
     {
         /*
             Here I am using the house object's other methods to achieve this goal instead of
             rewriting all of this functionality
          */
-        if (evaluate.getAskingPrice() < evaluate.calculateMarketValue(evaluate.getNumWindows(), evaluate.getNumBedrooms()))
+        if (checkHome.getAskingPrice() <
+                checkHome.calculateMarketValue(checkHome.getNumWindows(), checkHome.getNumBedrooms()))
         {
             return true;
         }
