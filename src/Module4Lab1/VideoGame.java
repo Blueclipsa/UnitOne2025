@@ -1,7 +1,5 @@
 package Module4Lab1;
 
-import Module2Lab3.Course;
-
 import java.text.NumberFormat;
 import java.time.Year;
 import java.util.Objects;
@@ -14,7 +12,7 @@ import java.util.Objects;
 public class VideoGame
 {
     // Constants
-    private final double MARK_UP = 0.2;
+    private final double MARK_UP = 0.20;
 
     // Instance variables
     private String platform;
@@ -25,24 +23,24 @@ public class VideoGame
     // Constructors
     public VideoGame()
     {
-        setTitle("No Title Given");
         setPlatform("Unconfirmed Platforms");
+        setTitle("No Title Given");
         setYear(Year.now().getValue());
         setWholesaleCost(1.0);
     }
 
     public VideoGame(String platform, String title, double wholesaleCost, int year)
     {
-        setTitle(title);
         setPlatform(platform);
+        setTitle(title);
         setWholesaleCost(wholesaleCost);
         setYear(year);
     }
 
     public VideoGame(VideoGame copyGame)
     {
-        setTitle(copyGame.getTitle());
         setPlatform(copyGame.getPlatform());
+        setTitle(copyGame.getTitle());
         setWholesaleCost(copyGame.getWholesaleCost());
         setYear(copyGame.getYear());
     }
@@ -141,10 +139,10 @@ public class VideoGame
         if (this == obj) return true; // If same object, return true
         if (obj == null || getClass() != obj.getClass()) return false; // If null or different class, return false
         VideoGame game = (VideoGame) obj; // Force object into expected class
-        return Objects.equals(platform, game.platform) &&
-                Objects.equals(title, game.title) &&
-                year == game.year &&
-                wholesaleCost == game.wholesaleCost;
+        return Objects.equals(platform, game.platform)
+                && Objects.equals(title, game.title)
+                && year == game.year
+                && wholesaleCost == game.wholesaleCost;
     }
 
     @Override

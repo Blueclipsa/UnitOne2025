@@ -13,17 +13,17 @@ public class Main
 {
     public static void main(String[] args)
     {
-        ArrayList<VideoGame> games = new ArrayList<>(); // Let's create an ArrayList
+        ArrayList<VideoGame> inventory = new ArrayList<>(); // Let's create an ArrayList
 
         // Let's add three valid pieces of data to this
-        games.add(new VideoGame("Xbox 360", "Halo 3", 40.0,2007));
-        games.add(new VideoGame("Wii", "Super Mario Galaxy", 25.0,2007));
-        games.add(new VideoGame("PlayStation 3", "The Last of Us", 45.0, 2013));
+        inventory.add(new VideoGame("Xbox 360", "Halo 3", 40.0, 2007));
+        inventory.add(new VideoGame("Wii", "Super Mario Galaxy", 25.0, 2007));
+        inventory.add(new VideoGame("PlayStation 3", "The Last of Us", 45.0, 2013));
 
         // Now let's try and add some bogus data
         try
         {
-            games.add(new VideoGame(null,"Half-Life 3", 20, 2025));
+            inventory.add(new VideoGame(null, "Half-Life 3", 20, 2025));
         }
         catch (IllegalArgumentException e) // Specified IllegalArgumentException here but I didn't really need to
         {
@@ -31,15 +31,15 @@ public class Main
         }
 
         // Let's now display all the valid game data
-        displayInventory(games);
+        displayInventory(inventory);
 
         // Next, lets display the total inventory value
-        calculateTotalValue(games);
+        calculateTotalValue(inventory);
 
-        // Finally, lets create a copy of one of the games and compare it.
-        VideoGame copyGame = new VideoGame(games.get(2));
+        // Finally, lets create a copy of one of the inventory and compare it.
+        VideoGame copyGame = new VideoGame(inventory.get(2));
 
-        if (copyGame.equals(games.get(2)))
+        if (copyGame.equals(inventory.get(2)))
         {
             System.out.println("These games are the same!");
         }
@@ -62,7 +62,7 @@ public class Main
     public static void calculateTotalValue(ArrayList<VideoGame> list)
     {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
-        // Attempting to use an iterator
+        // Attempting to use an iterator, a for each would be cleaner, but I wanted to get some practice
         Iterator<VideoGame> iterator = list.iterator();
         double sum = 0;
         while (iterator.hasNext())
