@@ -2,6 +2,8 @@ package Module4Lab1;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 /*
     James Quinn
@@ -47,6 +49,10 @@ public class Main
         {
             System.out.println("The games are not the same!");
         }
+
+        Collections.sort(inventory, Comparator.comparingDouble(VideoGame::getRetailPrice));
+
+        displayInventory(inventory);
 
     }
 
