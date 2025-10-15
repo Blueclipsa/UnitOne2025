@@ -1,5 +1,10 @@
 package Module4Lab2;
-
+/*
+    James Quinn
+    10/7/2025
+    This Student class contains all the relevant data necessary for a Student object in this hypothetical locker
+    assignment scenario. Setters contain relevant validation and class contains a formatted toString() override
+ */
 public class Student
 {
     // Instance Variables
@@ -66,6 +71,11 @@ public class Student
     {
         if (bannerID == null || bannerID.isEmpty())
         {
+            this.bannerID = "000000000";
+        }
+        else if (bannerID.length() != 9)
+        {
+            System.out.println("Provided bannerID is less than 9 characters. Setting default value");
             this.bannerID = "000000000";
         }
         else
