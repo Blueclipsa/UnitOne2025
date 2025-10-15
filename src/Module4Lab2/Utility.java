@@ -1,5 +1,6 @@
 package Module4Lab2;
 
+
 public class Utility
 {
     public void printLine()
@@ -9,6 +10,6 @@ public class Utility
 
     public void printMessage(String message)
     {
-        System.out.println(message);
+
     }
 }
