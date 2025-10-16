@@ -13,8 +13,6 @@ public class Driver
 {
     public static void main(String[] args)
     {
-        // Initialize Utility class for later use
-        Utility utility = new Utility();
         // Initialize ArrayList | Contents: 5 new Student objects with data
         ArrayList<Student> students = new ArrayList<Student>();
         // Create HashMap to contain Locker (key) and Student (value) pairs
@@ -36,13 +34,13 @@ public class Driver
         }
 
         // Print formatted, readable output with classes
-        utility.printMessage("Alamo Student List");
+        Utility.printMessage("Alamo Student List");
         for (Student student : students)
         {
             System.out.println(student.toString());
         }
 
-        utility.printMessage("Alamo Student LOcker Assignments");
+        Utility.printMessage("Alamo Student Locker Assignments");
         for (Map.Entry<Integer, Student> entry : lockerAssignments.entrySet())
         {
             System.out.println("Locker Number: " + entry.getKey() + " | Student: " + entry.getValue().getFirstName()

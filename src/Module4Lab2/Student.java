@@ -47,6 +47,7 @@ public class Student
     {
         if (firstName == null || firstName.isEmpty())
         {
+            System.out.println("First name is empty!");
             this.firstName = "John";
         }
         else
@@ -59,6 +60,7 @@ public class Student
     {
         if (lastName == null || lastName.isEmpty())
         {
+            System.out.println("Last name is empty!");
             this.lastName = "Doe";
         }
         else

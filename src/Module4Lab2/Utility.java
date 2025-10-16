@@ -7,12 +7,12 @@ package Module4Lab2;
 
 public class Utility
 {
-    public void printLine()
+    private static void printLine()
     {
         System.out.println("************************************************");
     }
 
-    public void printMessage(String message)
+    public static void printMessage(String message)
     {
         printLine();
         System.out.println("\t\t" + message);
