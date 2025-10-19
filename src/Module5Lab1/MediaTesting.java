@@ -1,7 +1,6 @@
 package Module5Lab1;
 
 import java.time.Year;
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MediaTesting
@@ -11,25 +10,13 @@ public class MediaTesting
     private String genre;
     private int releaseYear;
 
-    /**
-     * Tests the Media class default constructor values
-     * Ensures that the default constructor sets the correct values
-     */
-    @BeforeEach
-    public void SetUp()
-    {
-        title = "Indiana Jones";
-        genre = "Adventure";
-        releaseYear = 1995;
-    }
-
     @org.junit.Test // I get a warning for just doing @Test, things seem to have changed in JUnit4
     public void testDefaultConstructorValues()
     {
         testMedia = new Media();
-        assertTrue(testMedia.getTitle().equals("No Given Title"));
-        assertTrue(testMedia.getGenre().equals("No Given Genre"));
-        assertTrue(testMedia.getReleaseYear() == Year.now().getValue());
+        assertEquals("No Given Title", testMedia.getTitle());
+        assertEquals("No Given Genre", testMedia.getGenre());
+        assertEquals(testMedia.getReleaseYear(), Year.now().getValue());
     }
 
     @org.junit.Test
@@ -40,9 +27,9 @@ public class MediaTesting
         releaseYear = 1995;
 
         testMedia = new Media(title, genre, releaseYear);
-        assertEquals(testMedia.getTitle(), title);
-        assertEquals(testMedia.getGenre(), genre);
-        assertEquals(testMedia.getReleaseYear(), releaseYear);
+        assertEquals(title, testMedia.getTitle());
+        assertEquals(genre, testMedia.getGenre());
+        assertEquals(releaseYear, testMedia.getReleaseYear());
 
         testMedia.setTitle(null); // Attempt to set null values
         testMedia.setGenre(null);
@@ -50,7 +37,12 @@ public class MediaTesting
         assertNotNull(testMedia.getGenre());
 
         testMedia.setReleaseYear(-1); // Assert that the release year must be valid, testing negative
-        assertTrue(testMedia.getReleaseYear() > 1888); // 1888 chosen as no film is older than that year
+        /*
+            Since media has existed for most of human history and since things date back to the BC era, I will set this
+            at zero. Technically I think it would be best to override the validation directly in Movie/Book setters
+            for more specific numbers. Personally, I think year could be better represented as a String for that purpose
+         */
+        assertTrue(testMedia.getReleaseYear() > 0);
         testMedia.setReleaseYear(3001); // Assert that the release year must be valid, testing over current year
         assertTrue(testMedia.getReleaseYear() <=Year.now().getValue());
     }
@@ -58,6 +50,10 @@ public class MediaTesting
     @org.junit.Test
     public void testCopyConstructor()
     {
+        title = "Indiana Jones";
+        genre = "Adventure";
+        releaseYear = 1995;
+
         testMedia = new Media(title, genre, releaseYear);
         Media copiedMedia = new Media(testMedia);
 
