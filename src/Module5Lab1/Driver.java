@@ -9,6 +9,7 @@ public class Driver
         ArrayList<Book> books = new ArrayList<>();
         ArrayList<Movie> movies = new ArrayList<>();
 
+        Media[] media = new Media[6];
         books.add(new Book("The Hunger Games", "Young Adult Dystopia", 2008,
                 "Suzanne Collins", 374));
 
@@ -30,16 +31,24 @@ public class Driver
                 "Wes Anderson", 146));
 
 
+        int counter = 0;
         System.out.println("Books List: ");
         for (Book book : books)
         {
-            System.out.println(book.toString());
+            media[counter] = book;
+            counter++;
         }
 
         System.out.println("\nMovies List: ");
         for (Movie movie : movies)
         {
-            System.out.println(movie.toString());
+            media[counter] = movie;
+            counter++;
+        }
+
+        for (Media mediaList : media)
+        {
+            System.out.println(mediaList.toString());
         }
     }
 }
