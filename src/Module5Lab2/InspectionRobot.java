@@ -1,17 +1,30 @@
 package Module5Lab2;
-
+/*
+    James Quinn
+    10/29/2025
+    This class will contain the specific classes and variables required for an Inspection Robot. This class inherits
+    Robot and extends its functionality
+ */
 public class InspectionRobot extends Robot
 {
     // Instance variables
     private double sensitivityLevel;
 
-
+    /**
+     * Default constructor that creates a new {@code InspectionRobot} with default values
+     */
     public InspectionRobot() throws InvalidRobotConfigurationException
     {
         super();
         setSensitivityLevel(1);
     }
 
+    /**
+     * Creates a {@code PaintingRobot} with a specified paint color and otherwise default values
+     *
+     * @param sensitivityLevel The color of the paint used by the PaintBot
+     * @throws InvalidRobotConfigurationException if paintColor is null or empty
+     */
     public InspectionRobot(double sensitivityLevel) throws InvalidRobotConfigurationException
     {
         super();

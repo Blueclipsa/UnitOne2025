@@ -3,7 +3,7 @@ package Module5Lab2;
 import java.util.Objects;
 
 /*
-    Gerald Quinn
+    James Quinn
     10/29/2025
     This class will contain the parent variables and base logic for Robot classes which will be extended by later
     classes. Sets bedrock for inheritance and polymorphic behavior
@@ -139,6 +139,7 @@ public class Robot
             writing a bunch of exception handling code that would never be used.
          */
         batteryLevel = 100;
+        System.out.println("Battery recharged to 100");
     }
 
     /**

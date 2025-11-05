@@ -1,26 +1,47 @@
 package Module5Lab2;
 /*
     James Quinn
-    11/2/2025
-
+    10/29/2025
+    This class will contain the specific classes and variables required for a Welding Robot. This class inherits
+    Robot and extends its functionality
  */
 public class WeldingRobot extends Robot
 {
-    // Instance variables
+    /**
+     * The welding strength of the robot
+     */
     private int weldStrength;
 
+    /**
+     * Default constructor that creates a new {@code WeldingRobot} with default values
+     */
     public WeldingRobot() throws InvalidRobotConfigurationException
     {
         super();
         setWeldStrength(1);
     }
 
+    /**
+     * Creates a {@code WeldingRobot} with a specified welding strength and otherwise default values
+     *
+     * @param weldStrength The power of the welding torch used by the WeldBot
+     * @throws InvalidRobotConfigurationException if weldStrength is not larger than zero
+     */
     public WeldingRobot(int weldStrength) throws InvalidRobotConfigurationException
     {
         super();
         setWeldStrength(weldStrength);
     }
 
+    /**
+     * Creates a {@code WeldingRobot} with defined values
+     *
+     * @param idNumber Welding Robot's ID number
+     * @param modelName Specific model name of Welding Robot
+     * @param batteryLevel Welding Robot's starting battery level
+     * @param weldStrength Welding Robot's strength for welding
+     * @throws InvalidRobotConfigurationException when any user values are out of specified ranges
+     */
     public WeldingRobot(String idNumber, String modelName, int batteryLevel, int weldStrength)
             throws InvalidRobotConfigurationException
     {
@@ -28,6 +49,12 @@ public class WeldingRobot extends Robot
         setWeldStrength(weldStrength);
     }
 
+    /**
+     * Copies a welding bot to create an identical welding bot object
+     *
+     * @param copyBot The welding robot to be copied
+     * @throws InvalidRobotConfigurationException If any welding robot parameters are out of range
+     */
     public WeldingRobot(WeldingRobot copyBot) throws InvalidRobotConfigurationException
     {
         super(copyBot);
