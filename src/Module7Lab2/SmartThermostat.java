@@ -63,5 +63,9 @@ public class SmartThermostat extends Device implements SmartDevice
             System.out.println("Unit: " + getName());
             System.out.println("Thermostat is on, and set to " + getRoomTemperature());
         }
+        else
+        {
+            System.out.println("The system is currently off.");
+        }
     }
 }
