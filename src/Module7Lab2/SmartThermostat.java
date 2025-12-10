@@ -1,26 +1,50 @@
 package Module7Lab2;
 
+/**
+ * Represents a smart thermostat capable of adjusting
+ * room temperature between 60°F and 80°F.
+ */
 public class SmartThermostat extends Device implements SmartDevice
 {
     private double roomTemperature;
 
+    /**
+     * Default constructor setting the temperature to 65°F.
+     */
     public SmartThermostat()
     {
         super();
         roomTemperature = 65.0;
     }
 
+    /**
+     * Constructs a thermostat with a custom name and temperature.
+     *
+     * @param name device name
+     * @param roomTemperature desired initial temperature
+     */
     public SmartThermostat(String name, double roomTemperature)
     {
         super(name);
         this.roomTemperature = roomTemperature;
     }
 
+    /**
+     * Gets the current thermostat temperature.
+     *
+     * @return temperature in °F
+     */
     public double getRoomTemperature()
     {
         return roomTemperature;
     }
 
+    /**
+     * Sets the thermostat temperature.
+     * Values below 60 become 60, values above 80 become 80.
+     *
+     * @param roomTemperature requested temperature
+     */
     public void setRoomTemperature(double roomTemperature)
     {
         if (roomTemperature < 60)
@@ -36,6 +60,8 @@ public class SmartThermostat extends Device implements SmartDevice
             this.roomTemperature = roomTemperature;
         }
     }
+
+    /** {@inheritDoc} */
     @Override
     public void turnOn()
     {
@@ -49,12 +75,14 @@ public class SmartThermostat extends Device implements SmartDevice
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void turnOff()
     {
         setOn(false);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void getStatus()
     {

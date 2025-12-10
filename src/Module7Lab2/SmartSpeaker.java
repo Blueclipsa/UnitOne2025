@@ -1,11 +1,19 @@
 package Module7Lab2;
 
+/**
+ * Represents a smart speaker capable of playing music,
+ * adjusting volume, and remembering its last volume level.
+ */
 public class SmartSpeaker extends Device implements SmartDevice
 {
     private String currentSong;
     private int volume;
     private int lastSetVolume;
 
+    /**
+     * Default constructor initializing the speaker with no song
+     * and volume set to 0.
+     */
     public SmartSpeaker()
     {
         super();
@@ -14,6 +22,14 @@ public class SmartSpeaker extends Device implements SmartDevice
         lastSetVolume = 0;
     }
 
+    /**
+     * Constructs a smart speaker with a custom name,
+     * initial song, and volume level.
+     *
+     * @param name the speaker name
+     * @param currentSong the song to begin with
+     * @param volume initial volume, capped 0–100
+     */
     public SmartSpeaker(String name, String currentSong, int volume)
     {
         super(name);
@@ -22,16 +38,32 @@ public class SmartSpeaker extends Device implements SmartDevice
         lastSetVolume = 0;
     }
 
+    /**
+     * Returns the currently playing song.
+     *
+     * @return the song name, or "No Song Playing"
+     */
     public String getCurrentSong()
     {
         return currentSong;
     }
 
+    /**
+     * Gets the current volume level.
+     *
+     * @return volume between 0 and 100
+     */
     public int getVolume()
     {
         return volume;
     }
 
+    /**
+     * Sets the song currently playing.
+     * If input is invalid, defaults to "No Song Playing".
+     *
+     * @param currentSong song name
+     */
     public void setCurrentSong(String currentSong)
     {
         if (currentSong == null || currentSong.isEmpty())
@@ -44,6 +76,13 @@ public class SmartSpeaker extends Device implements SmartDevice
         }
     }
 
+    /**
+     * Sets the speaker volume.
+     * Values ≤ 0 become 0.
+     * Values > 100 become 100.
+     *
+     * @param volume desired volume level
+     */
     public void setVolume(int volume)
     {
         if (volume <= 0)
@@ -60,6 +99,7 @@ public class SmartSpeaker extends Device implements SmartDevice
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void turnOn()
     {
@@ -81,6 +121,7 @@ public class SmartSpeaker extends Device implements SmartDevice
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void turnOff()
     {
@@ -89,6 +130,7 @@ public class SmartSpeaker extends Device implements SmartDevice
         setCurrentSong("");
     }
 
+    /** {@inheritDoc} */
     @Override
     public void getStatus()
     {
