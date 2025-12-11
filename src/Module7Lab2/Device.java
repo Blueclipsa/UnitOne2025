@@ -1,5 +1,8 @@
 package Module7Lab2;
-
+/*
+    James Quinn
+    11/30/2025
+ */
 /**
  * The {@code Device} class is an abstract base class representing a generic smart device.
  * It stores shared attributes such as the device name and power state.

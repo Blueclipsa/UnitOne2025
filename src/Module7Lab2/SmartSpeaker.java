@@ -1,5 +1,8 @@
 package Module7Lab2;
-
+/*
+    James Quinn
+    11/30/2025
+ */
 /**
  * Represents a smart speaker capable of playing music,
  * adjusting volume, and remembering its last volume level.

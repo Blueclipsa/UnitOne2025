@@ -2,7 +2,10 @@ package Module7Lab2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/*
+    James Quinn
+    11/30/2025
+ */
 /**
  * The {@code Driver} class provides the user interface
  * for interacting with smart devices in a console menu system.

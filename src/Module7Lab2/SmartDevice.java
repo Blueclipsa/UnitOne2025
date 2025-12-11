@@ -1,5 +1,8 @@
 package Module7Lab2;
-
+/*
+    James Quinn
+    11/30/2025
+ */
 /**
  * The {@code SmartDevice} interface defines the required functionality
  * for any smart device in the system.

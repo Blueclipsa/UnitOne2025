@@ -1,5 +1,8 @@
 package Module7Lab2;
-
+/*
+    James Quinn
+    11/30/2025
+ */
 /**
  * Represents a smart thermostat capable of adjusting
  * room temperature between 60°F and 80°F.

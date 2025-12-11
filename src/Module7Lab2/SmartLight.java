@@ -1,5 +1,8 @@
 package Module7Lab2;
-
+/*
+    James Quinn
+    11/30/2025
+ */
 /**
  * Represents a smart light that can be turned on, turned off,
  * and adjusted in brightness between 0 and 100.
